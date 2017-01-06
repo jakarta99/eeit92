@@ -1,6 +1,7 @@
 package softleaderfirst;
 //單元測試對單一方法做測試
 //測試project上右鍵>new>JUnit Test Case>選擇要測試method
+//重新載入 會有問題 對原測試 method再建一次新JUnit 環境就會自動載入
 import static org.junit.Assert.*;
 
 import org.junit.Test;
