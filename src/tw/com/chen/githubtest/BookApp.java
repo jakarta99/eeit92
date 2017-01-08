@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import tw.com.chen.githubtest.entity.book.Book;
 import tw.com.chen.githubtest.service.BookService;
-
+//test
 public class BookApp {
 
 	public static void main(String[] args) {
