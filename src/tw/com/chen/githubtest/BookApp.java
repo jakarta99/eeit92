@@ -25,6 +25,7 @@ public class BookApp {
 		while (true) {
 
 			Long inputId = scan.nextLong();
+			
 			if (inputId == 0)
 				break;
 			Book bookId = bookService.getId(inputId);
