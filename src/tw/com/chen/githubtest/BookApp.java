@@ -24,12 +24,17 @@ public class BookApp {
 		Scanner scan = new Scanner(System.in);
 		while (true) {
 
-			Long inputId = scan.nextLong();
-			
-			if (inputId == 0)
-				break;
-			Book bookId = bookService.getId(inputId);
-			System.out.println(bookId);
+//			Long inputId = scan.nextLong();
+			String str=scan.next();
+			if(str.equals("scan")){
+				Collection<Book> book = bookService.getAll();
+				System.out.println(book);
+				}
+			break;
+//			if (inputId == 0)
+//				break;
+//			Book bookId = bookService.getId(inputId);
+//			System.out.println(bookId);
 
 		}
 		scan.close();
