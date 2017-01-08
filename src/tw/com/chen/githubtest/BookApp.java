@@ -10,7 +10,7 @@ public class BookApp {
 
 	public static void main(String[] args) {
 		BookService bookService = new BookService();
-		// Collection<Book> books = bookService.getAll();
+		 Collection<Book> books = bookService.getAll();
 		// JAVA 4以前
 		// Iterator<Book> itr=books.iterator();
 		// while(itr.hasNext()){
@@ -27,10 +27,14 @@ public class BookApp {
 //			Long inputId = scan.nextLong();
 			String str=scan.next();
 			if(str.equals("scan")){
-				Collection<Book> book = bookService.getAll();
-				System.out.println(book);
+//				Collection<Book> book = bookService.getAll();
+				 for(Book book: books){
+				 System.out.println(book);
+				 }
+	
+				break;
 				}
-			break;
+			
 //			if (inputId == 0)
 //				break;
 //			Book bookId = bookService.getId(inputId);
