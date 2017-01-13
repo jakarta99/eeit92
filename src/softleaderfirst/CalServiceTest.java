@@ -1,7 +1,9 @@
 package softleaderfirst;
-//³æ¤¸´ú¸Õ¹ï³æ¤@¤èªk°µ´ú¸Õ
-//´ú¸Õproject¤W¥kÁä>new>JUnit Test Case>¿ï¾Ü­n´ú¸Õmethod
-//­«·s¸ü¤J ·|¦³°İÃD ¹ï­ì´ú¸Õ method¦A«Ø¤@¦¸·sJUnit Àô¹Ò´N·|¦Û°Ê¸ü¤J
+//å–®å…ƒæ¸¬è©¦å°å–®ä¸€æ–¹æ³•åšæ¸¬è©¦
+//æ¸¬è©¦projectä¸Šå³éµ>new>JUnit Test Case>é¸æ“‡è¦æ¸¬è©¦method
+//æ²’æœ‰å°±è¦å»Other>JUnitæ‰¾
+//é‡æ–°è¼‰å…¥ æœƒæœ‰å•é¡Œ (1)å°åŸæ¸¬è©¦ methodå†å»ºä¸€æ¬¡æ–°JUnit ç’°å¢ƒå°±æœƒè‡ªå‹•è¼‰å…¥
+//               (2)build path > Configure build path >Libraries >add Library >JUnit
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -12,7 +14,7 @@ public class CalServiceTest {
 	public void testAdd() {
 		CalService call = new CalService();
 		int sum=call.add(3, 5);
-		assertEquals(8,sum);//(¹w´Á,¹ê»Ú­pºâ)¦³¿ù·|¦³¬õ¦â
+		assertEquals(8,sum);//(é æœŸ,å¯¦éš›è¨ˆç®—)æœ‰éŒ¯æœƒæœ‰ç´…è‰²
 	}
 
 	@Test
@@ -33,7 +35,7 @@ public class CalServiceTest {
 	public void testDiv() {
 		CalService call = new CalService();
 		double sum=call.div(3, 5);
-		assertEquals(0.6,sum,0.01);//¥i±µ¨ü»~®t½d³ò
+		assertEquals(0.6,sum,0.01);//å¯æ¥å—èª¤å·®ç¯„åœ
 
 		
 		

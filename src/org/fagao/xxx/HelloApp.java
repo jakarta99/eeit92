@@ -1,10 +1,10 @@
 package org.fagao.xxx;
 
-// ©I¥s¤èªk Import >Git >Project from Git> Clone URI
-//                >¶K¤W½Æ»sPATH > ¤@ª½next
+// ï¿½Iï¿½sï¿½ï¿½k Import >Git >Project from Git> Clone URI
+//                >ï¿½Kï¿½Wï¿½Æ»sPATH > ï¿½@ï¿½ï¿½next
 
-// °£¿ù¤èªk  Project >¥kÁä properties >JRE System..¥´¤Ä
-//                 >refresh >"­«ÂI¥Î" run as application
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½k  Project >ï¿½kï¿½ï¿½ properties >JRE System..ï¿½ï¿½ï¿½ï¿½
+//                 >refresh >"ï¿½ï¿½ï¿½Iï¿½ï¿½" run as application
                    
 
 public class HelloApp {
