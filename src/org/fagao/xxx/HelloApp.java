@@ -6,7 +6,7 @@ package org.fagao.xxx;
 //除錯方法  Project >右鍵 properties >JRE System..打勾
 //                 >refresh >"重點用" run as application
 //測試
-//test2!!
+//test3!!
                    
 
 public class HelloApp {
