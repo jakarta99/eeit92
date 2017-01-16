@@ -1,8 +1,9 @@
-package tw.com.iris.service;
+package tw.com.yingchu.service;
 
 import java.util.Collection;
-import tw.com.iris.dao.BookDao;
-import tw.com.iris.entity.Book;
+
+import tw.com.yingchu.dao.BookDao;
+import tw.com.yingchu.entity.Book;
 
 public class BookService {
 

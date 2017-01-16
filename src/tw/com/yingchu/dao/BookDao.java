@@ -1,4 +1,4 @@
-package tw.com.iris.dao;
+package tw.com.yingchu.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
-import tw.com.iris.entity.Book;
+import tw.com.yingchu.entity.Book;
+
 
 public class BookDao {
 	String URL = "jdbc:sqlserver://softleader.com.tw:1433;databaseName=EEIT92DB";

@@ -1,4 +1,4 @@
-package tw.com.iris.entity;
+package tw.com.yingchu.entity;
 
 public class Book {
     private Long id;
