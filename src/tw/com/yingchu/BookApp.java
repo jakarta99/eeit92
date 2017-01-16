@@ -10,7 +10,6 @@ import tw.com.yingchu.service.BookService;
 public class BookApp {
 
 	public static void main(String[] args) {
-
 		BookService bookService = new BookService();
 		Collection<Book> books = bookService.getAll();
 
