@@ -6,6 +6,7 @@ import java.util.Scanner;
 import tw.com.yingchu.entity.Book;
 import tw.com.yingchu.service.BookService;
 
+
 public class BookApp {
 
 	public static void main(String[] args) {

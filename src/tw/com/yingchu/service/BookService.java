@@ -10,7 +10,6 @@ public class BookService {
 	public Collection<Book> getAll() {
 		BookDao bookDao = new BookDao();
 		return bookDao.findAll();
-
 	}
 
 	public Book getByID(Long id) {

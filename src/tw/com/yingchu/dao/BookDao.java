@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import tw.com.yingchu.entity.Book;
 
-
 public class BookDao {
 	String URL = "jdbc:sqlserver://softleader.com.tw:1433;databaseName=EEIT92DB";
 	String USERNAME = "EEIT92";
