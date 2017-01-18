@@ -1,10 +1,10 @@
-package src.tw.com.aben;
+package tw.com.aben;
 
 import java.util.Collection;
 import java.util.Scanner;
 
-import src.tw.com.aben.entity.Book;
-import src.tw.com.aben.service.BookService;
+import tw.com.aben.entity.Book;
+import tw.com.aben.service.BookService;
 
 public class BookApp {
 
@@ -31,7 +31,7 @@ public class BookApp {
 		}
 		
 
-		// while (true) {//¦P²z¥i¼ginsert update delete«ü¥O
+		// while (true) {//ï¿½Pï¿½zï¿½iï¿½ginsert update deleteï¿½ï¿½ï¿½O
 		// Scanner scan = new Scanner(System.in);
 		// Long inputId = scan.nextLong();
 		//
@@ -44,16 +44,16 @@ public class BookApp {
 		// System.out.println(book);
 		// }
 
-		while (true) {// ¦P²z¥i¼ginsert update delete«ü¥O
-			          // while(true) ªº¥Øªº¦b©ó¥i¥H¤@ª½¿é¤J
-			Scanner scan = new Scanner(System.in);//system.in¬O¦b¶}µo¼Ò¦¡console¤U¿é¤J
+		while (true) {// ï¿½Pï¿½zï¿½iï¿½ginsert update deleteï¿½ï¿½ï¿½O
+			          // while(true) ï¿½ï¿½ï¿½Øªï¿½ï¿½bï¿½ï¿½iï¿½Hï¿½@ï¿½ï¿½ï¿½ï¿½J
+			Scanner scan = new Scanner(System.in);//system.inï¿½Oï¿½bï¿½}ï¿½oï¿½Ò¦ï¿½consoleï¿½Uï¿½ï¿½J
 			String inputString = scan.nextLine(); 
-			if (inputString.equalsIgnoreCase("all")) {//String¬O­n¥Îequal¤£¯à¥Î==³o¬O«ü¦ì¸m¬Ûµ¥
+			if (inputString.equalsIgnoreCase("all")) {//Stringï¿½Oï¿½nï¿½ï¿½equalï¿½ï¿½ï¿½ï¿½ï¿½==ï¿½oï¿½Oï¿½ï¿½ï¿½ï¿½mï¿½Ûµï¿½
 				
 				for (Book book : books) {
 					System.out.println(book);
 				}
-				break; //while´N­n³]break¤¤Â_ ¤£µM·|µL½a
+				break; //whileï¿½Nï¿½nï¿½]breakï¿½ï¿½ï¿½_ ï¿½ï¿½ï¿½Mï¿½|ï¿½Lï¿½a
 			}
 			
 			scan.close();

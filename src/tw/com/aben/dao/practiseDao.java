@@ -1,4 +1,4 @@
-package src.tw.com.aben.dao;
+package tw.com.aben.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,27 +8,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import src.tw.com.aben.entity.Book;
+import tw.com.aben.entity.Book;
 
 public class practiseDao {
 
-	private static final String URL = "jdbc:sqlserver://softleader.com.tw:1433;databaseName=EEIT92DB;";// ¥Îprivate
+	private static final String URL = "jdbc:sqlserver://softleader.com.tw:1433;databaseName=EEIT92DB;";// ï¿½ï¿½private
 	private static final String User = "EEIT92";
 	private static final String Password = "EEIT92";
 	private static final String FIND_BY_ID = "select * from book_aben where id =?";
 	private static final String FINDALL = "select * from book_aben";
 	private static final String INSERT = "insert into book_aben (isbn_code,name,price) values (?,?,?)";
-	// insert «ü¥O¤£¼ô
+	// insert ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½
 	private static final String UPDATE="update book_aben set id=?,isbn=?,name=?,price=? where id =? ";
 	
 	public Collection<Book> findALL() {
-		Collection<Book> books = null;// ­n¥~´£¤~¥ireturn ¤£µM¹J¨ì¨Ò¥~´N°±¦í
-										// §â®³¨ìªº¦hµ§Book¦s¤Jbooks
+		Collection<Book> books = null;// ï¿½nï¿½~ï¿½ï¿½ï¿½~ï¿½ireturn ï¿½ï¿½ï¿½Mï¿½Jï¿½ï¿½Ò¥~ï¿½Nï¿½ï¿½ï¿½ï¿½
+										// ï¿½â®³ï¿½ìªºï¿½hï¿½ï¿½Bookï¿½sï¿½Jbooks
 		try (Connection conn = DriverManager.getConnection(URL, User, Password);
 				PreparedStatement pstmt = conn.prepareStatement(FINDALL);
 				ResultSet rs = pstmt.executeQuery();) {
 			if (!rs.wasNull()) {
-				books = new ArrayList<Book>();// ¦³¤~new ¸`¬Ù°O¾ÐÅé
+				books = new ArrayList<Book>();// ï¿½ï¿½ï¿½~new ï¿½`ï¿½Ù°Oï¿½ï¿½ï¿½ï¿½
 				while (rs.next()) {
 					Book book = new Book();
 					book.setId(rs.getLong("id"));
@@ -51,9 +51,9 @@ public class practiseDao {
 		ResultSet rs = null;
 		try (Connection conn = DriverManager.getConnection(URL, User, Password);
 				PreparedStatement pstmt = conn.prepareStatement(FIND_BY_ID);) {
-			pstmt.setLong(1, id);// ©öº|³o¦æ°ÊºA»Ý­nµ¹°Ý¸¹°Ñ¼Æ¡A1¥Nªí²Ä¤@­Ó°Ý¸¹
-			rs = pstmt.executeQuery();// ·sclose¤èªk ³o¨â¥y­n¤@°_
-										// ©Ò¥HµLªk©ñ¨ìtry(¸Ì­±­n©ñ«Å§iªº)
+			pstmt.setLong(1, id);// ï¿½ï¿½ï¿½|ï¿½oï¿½ï¿½ÊºAï¿½Ý­nï¿½ï¿½ï¿½Ý¸ï¿½ï¿½Ñ¼Æ¡A1ï¿½Nï¿½ï¿½Ä¤@ï¿½Ó°Ý¸ï¿½
+			rs = pstmt.executeQuery();// ï¿½scloseï¿½ï¿½k ï¿½oï¿½ï¿½yï¿½nï¿½@ï¿½_
+										// ï¿½Ò¥Hï¿½Lï¿½kï¿½ï¿½ï¿½try(ï¿½Ì­ï¿½ï¿½nï¿½ï¿½Å§iï¿½ï¿½)
 			if (rs.next()) {
 				book = new Book();
 				book.setId(rs.getLong(1));
@@ -83,8 +83,8 @@ public class practiseDao {
 			if (book != null) {
 				
 				
-				//pstmt.setLong(1, book.getId()); //¬y¤ô¸¹ID·|¦Û°Ê¥[¤J©Ò¥H¤£¼g
-				pstmt.setString(1, book.getIsbn_code());//id®³±¼¶¶§Ç­nÅÜ
+				//pstmt.setLong(1, book.getId()); //ï¿½yï¿½ï¿½ï¿½ï¿½IDï¿½|ï¿½Û°Ê¥[ï¿½Jï¿½Ò¥Hï¿½ï¿½ï¿½g
+				pstmt.setString(1, book.getIsbn_code());//idï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç­nï¿½ï¿½
 				pstmt.setString(2, book.getName());
 				pstmt.setInt(3, book.getPrice());
 			}

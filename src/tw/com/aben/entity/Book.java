@@ -1,7 +1,7 @@
-package src.tw.com.aben.entity;
+package tw.com.aben.entity;
 
 public class Book {	
-	private Long id; //¤£¯àstatic§_«hµLªktoString();
+	private Long id; //ï¿½ï¿½ï¿½ï¿½staticï¿½_ï¿½hï¿½Lï¿½ktoString();
 	private String isbn_code;
 	private String name;
 	private Integer price;

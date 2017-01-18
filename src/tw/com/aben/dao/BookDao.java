@@ -1,4 +1,4 @@
-package src.tw.com.aben.dao;
+package tw.com.aben.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import src.tw.com.aben.entity.Book;
+import tw.com.aben.entity.Book;
 
 public class BookDao {
 	private static final String URL = "jdbc:sqlserver://softleader.com.tw:1433;databaseName=EEIT92DB;";

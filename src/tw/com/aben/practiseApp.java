@@ -1,13 +1,13 @@
-package src.tw.com.aben;
+package tw.com.aben;
 
-import src.tw.com.aben.entity.Book;
-import src.tw.com.aben.service.practiseService;
+import tw.com.aben.entity.Book;
+import tw.com.aben.service.practiseService;
 
 public class practiseApp {
 
 	public static void main(String[] args) {
 		practiseService practiseservice = new practiseService();
-//		System.out.println(practiseservice.getAll());//ª½±µ¦L¥X¬O¤@­ÓCollection
+//		System.out.println(practiseservice.getAll());//ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½Xï¿½Oï¿½@ï¿½ï¿½Collection
 
 		Book book=new Book();		
 		book.setIsbn_code("AAA-0005");

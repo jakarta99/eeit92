@@ -1,9 +1,9 @@
-package src.tw.com.aben.service;
+package tw.com.aben.service;
 
 import java.util.Collection;
 
-import src.tw.com.aben.dao.practiseDao;
-import src.tw.com.aben.entity.Book;
+import tw.com.aben.dao.practiseDao;
+import tw.com.aben.entity.Book;
 
 public class practiseService {
 	public Collection<Book> getAll(){
@@ -13,7 +13,7 @@ public class practiseService {
 	
 	public Book getById(Long id){
 		practiseDao practisedao=new practiseDao();
-		return practisedao.findById(id);//findById¤èªk©w¸q¤wµ¹«¬§O¦¹³B¤£¯à¦A¥[
+		return practisedao.findById(id);//findByIdï¿½ï¿½kï¿½wï¿½qï¿½wï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½Aï¿½[
 		
 	}
 	public Book add(Book book){

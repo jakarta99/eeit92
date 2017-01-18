@@ -1,9 +1,9 @@
-package src.tw.com.aben.service;
+package tw.com.aben.service;
 
 import java.util.Collection;
 
-import src.tw.com.aben.dao.BookDao;
-import src.tw.com.aben.entity.Book;
+import tw.com.aben.dao.BookDao;
+import tw.com.aben.entity.Book;
 
 public class BookService {
 	public Collection<Book> getAll(){
