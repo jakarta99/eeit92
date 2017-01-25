@@ -14,4 +14,16 @@ public class BookService {
 		
 		return new BookDao().findById(id);
 	}
+	public Book update(String name, Integer price,  String isbn_code, Long id){
+		return new BookDao().update(name, price, isbn_code, id);
+		
+	}
+	public Book insert(Book book){
+		return new BookDao().insert(book);
+		
+	}
+	public boolean delete(Long id){
+		return new BookDao().delete(id);
+		
+	}
 }

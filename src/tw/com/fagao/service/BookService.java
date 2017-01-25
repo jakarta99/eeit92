@@ -17,5 +17,19 @@ public class BookService {
 		BookDao bookDao = new BookDao();
 		return bookDao.findByID(id);
 	}
+	
+	public int insertBook(Book book) { 
+		BookDao bookDao = new BookDao();
+		return bookDao.insertBook(book);
+	}
 
+	public int updateBook(String name, String author, Integer price, Long id){
+		BookDao bookDao = new BookDao();
+		return bookDao.updateBook(name, author, price, id);
+	}
+	
+	public boolean deleteBookById(int id){
+		BookDao bookDao = new BookDao();
+		return bookDao.deleteBookById(id);
+	}
 }

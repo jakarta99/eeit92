@@ -15,6 +15,7 @@ public class BookDao {
 	private final String url = "jdbc:sqlserver://softleader.com.tw:1433;databaseName=EEIT92DB";
 	private final String user = "EEIT92";
 	private final String finding = "select * from book_chen";
+	
 
 	public Collection<Book> findAll() {
 
@@ -139,9 +140,6 @@ public class BookDao {
 //		PreparedStatement pstmt = conn.prepareStatement("INSERT INTO id()");
 //		return result;
 //	}
-	private static final String URL = "jdbc:sqlserver://softleader.com.tw:1433;databaseName=EEIT92DB";
-	private static final String USERNAME = "sa";
-	private static final String PASSWORD = "passw0rd";
 
 	
 
@@ -153,7 +151,7 @@ public class BookDao {
 		Book book = null;
 		PreparedStatement pstmt = null;
 		try {
-			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			conn = DriverManager.getConnection(url, user, user);
 			pstmt = conn.prepareStatement(INSERT);
 			pstmt.setLong(1, bean.getId());
 			pstmt.setString(2, bean.getSbn_code());
@@ -194,7 +192,7 @@ public class BookDao {
 		Book result = null;
 		PreparedStatement pstmt = null;
 		try {
-			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			conn = DriverManager.getConnection(url, user, user);
 			pstmt = conn.prepareStatement(UPDATE);
 			pstmt.setString(1, name);
 			pstmt.setInt(2, price);
@@ -234,7 +232,7 @@ public class BookDao {
 	public boolean delete(Long id) {
 		PreparedStatement pstmt=null;
 		try {
-			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			conn = DriverManager.getConnection(url, user, user);
 			pstmt = conn.prepareStatement(DELETE);
 			pstmt.setLong(1, id);
 			int i = pstmt.executeUpdate();

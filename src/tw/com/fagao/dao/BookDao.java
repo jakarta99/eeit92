@@ -122,5 +122,133 @@ public class BookDao {
 
 		return books;
 	}
+	
+	public int insertBook(Book bean) { 
+		
+		String INSERT =
+				"insert into book_fagao (name, author, price) values (?, ?, ?)";
+		
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		int i= 0;
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			stmt = conn.prepareStatement(INSERT);
 
+			stmt.setString(1, bean.getName());
+			stmt.setString(2, bean.getAuthor());
+			stmt.setInt(3, bean.getPrice());
+			i = stmt.executeUpdate();
+			if (i == 1) {
+				return i;
+			}		
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally{
+		if (stmt!=null) {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		if (conn!=null) {
+		    try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}		
+		}
+		return i;
+	}
+
+
+	public int updateBook(String name, String author, Integer price, Long id) {
+		
+		String UPDATE =
+				"update book_fagao set name=?, author=?, price=? where id=?";
+		
+		int updateCount = 0;
+		
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			stmt = conn.prepareStatement(UPDATE);
+			
+			stmt.setString(1, name);
+			stmt.setString(2, author);
+			stmt.setInt(3, price);
+			stmt.setLong(4, id);
+			
+			updateCount = stmt.executeUpdate(); //傳回成功更新資料筆數
+			return updateCount;  
+			
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally{
+		
+		if (stmt!=null) {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		if (conn!=null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		}
+		return 	0;	//失敗代表成功0筆資料
+	}
+	
+
+	public boolean deleteBookById(int id) {
+		
+		String DELETE =
+				"delete from book_fagao where id=?";
+		
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			stmt = conn.prepareStatement(DELETE);
+			
+			stmt.setInt(1, id);
+			
+			int i = stmt.executeUpdate(); //因為sql指令為update(insert、delete)所以用executeUpdate()
+			
+			if(i==1){ //如果i=1則成功更新(刪除)一筆資料
+				return true;
+			}
+			
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally{		
+		if (stmt!=null) {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		if (conn!=null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		}
+		return false;
+	}
 }

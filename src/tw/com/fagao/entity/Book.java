@@ -6,6 +6,14 @@ public class Book {
     private String author; //SQL varchar
     private Integer price; //SQL int
 	
+    public Book(){
+    	
+    }
+    public Book(String name,String author,Integer price){
+    	this.name=name;
+    	this.author=author;
+    	this.price=price;
+    }
     //右鍵 => source => toString
 	@Override
 	public String toString() { //Object底下的toString

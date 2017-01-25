@@ -75,7 +75,7 @@ public class BookDao {
 		ResultSet rs = null;
 		Book books = null;
 		try {
-			
+
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			pstmt = conn.prepareStatement(SELECT_BY_ID);
 			pstmt.setLong(1, id);
@@ -117,4 +117,44 @@ public class BookDao {
 		return books;
 	}
 
+	public Book findByInster(Book bean) {
+
+		String BY_INSERT = "insert into book_iris(id,name,author,price) value(?,?,?,?)";
+
+		Book book = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			pstmt = conn.prepareStatement(BY_INSERT);
+			pstmt.setLong(1, bean.getId());
+			pstmt.setString(2, bean.getName());
+			pstmt.setString(3, bean.getAuthor());
+			pstmt.setInt(4, bean.getPrice());
+			int num = pstmt.executeUpdate();
+
+			if (num == 1) {
+				return book;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		if (pstmt != null) {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
 }
