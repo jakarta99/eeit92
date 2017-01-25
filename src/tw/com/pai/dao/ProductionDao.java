@@ -17,6 +17,7 @@ public class ProductionDao {
 	private final static String username = "sa";
 	private final static String password = "sa123456";
 
+	
 	private final static String select_all = "select * from product";
 	private final static String select_by_id ="select * from product where id=?";
 	private final static String insert ="insert into product (id, name, price, make, expire) values (?, ?, ?, ?, ?)";
