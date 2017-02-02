@@ -189,7 +189,7 @@ public class BookDao {
 	}
 
 	public Book insert(Long id, String name, String author, int price) {
-		String INSERT = "insert into book_iris(id,name,author,price) values(?,?,?,?)";
+		String INSERT = "Set Identity_Insert book_iris ON;insert into book_iris(id,name,author,price) values(?,?,?,?)";
 		Book insertBook = new Book();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
