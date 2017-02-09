@@ -32,7 +32,7 @@ public class BookService {
 
 	}
 
-	public Book insert(Long id, String name, String author, int price) {
+	public boolean insert(Long id, String name, String author, int price) {
 		BookDao bookDao = new BookDao();
 		return bookDao.insert(id, name, author, price);
 

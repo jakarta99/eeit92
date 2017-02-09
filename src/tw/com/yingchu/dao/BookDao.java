@@ -154,7 +154,6 @@ public class BookDao {
 
 	public boolean delete(Long id) {
 		String DELETE = "delete from book_iris where id=?";
-		Book deleteBook = new Book();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -188,9 +187,8 @@ public class BookDao {
 		return false;
 	}
 
-	public Book insert(Long id, String name, String author, int price) {
+	public boolean insert(Long id, String name, String author, int price) {
 		String INSERT = "Set Identity_Insert book_iris ON;insert into book_iris(id,name,author,price) values(?,?,?,?)";
-		Book insertBook = new Book();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -200,7 +198,11 @@ public class BookDao {
 			pstmt.setString(2, name);
 			pstmt.setString(3, author);
 			pstmt.setInt(4, price);
-			pstmt.executeUpdate();
+			int num = pstmt.executeUpdate();
+
+			if (num == 1) {
+				return true;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -221,7 +223,7 @@ public class BookDao {
 			}
 		}
 
-		return insertBook;
+		return false;
 
 	}
 

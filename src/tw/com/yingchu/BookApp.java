@@ -37,7 +37,10 @@ public class BookApp {
 
 		// System.out.println(bookService.update((long) 8, "B-003", "Spring",
 		// 72));
-		// System.out.println(bookService.delete((long) 6));
-		System.out.println(bookService.insert((long) 1, "A-001", "MVC", 888));
+		// System.out.println(bookService.delete((long) 1));
+		System.out.println(bookService.insert((long) 13, "A-009", "Math", 999));
+
+		
+	
 	}
 }
