@@ -8,8 +8,6 @@ import tw.com.yingchu.entity.Book;
 
 public class BookService {
 
-	private static final String author = null;
-
 	public Collection<Book> getAll() {
 		BookDao bookDao = new BookDao();
 		return bookDao.findAll();

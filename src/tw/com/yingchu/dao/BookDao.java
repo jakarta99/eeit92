@@ -17,7 +17,7 @@ public class BookDao {
 
 	public Collection<Book> findAll() {
 		Collection<Book> books = new ArrayList<Book>(); 
-		String select = "select * from book_iris";
+		String select = "select * from book_yingchu";
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -69,7 +69,7 @@ public class BookDao {
 
 	public Book findByID(Long id) {
 
-		String SELECT_BY_ID = "select * from book_iris where id=?";
+		String SELECT_BY_ID = "select * from book_yingchu where id=?";
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -118,7 +118,7 @@ public class BookDao {
 	}
 
 	public Book update(Long id, String name, String author, int price) {
-		String UPDATE = "UPDATE book_iris set name=?,author=?,price=? where id=?";
+		String UPDATE = "UPDATE book_yingchu set name=?,author=?,price=? where id=?";
 		Book updateBook = new Book();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -153,7 +153,7 @@ public class BookDao {
 	}
 
 	public boolean delete(Long id) {
-		String DELETE = "delete from book_iris where id=?";
+		String DELETE = "delete from book_yingchu where id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -188,7 +188,7 @@ public class BookDao {
 	}
 
 	public boolean insert(Long id, String name, String author, int price) {
-		String INSERT = "Set Identity_Insert book_iris ON;insert into book_iris(id,name,author,price) values(?,?,?,?)";
+		String INSERT = "Set Identity_Insert book_yingchu ON;insert into book_yingchu(id,name,author,price) values(?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
